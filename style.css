@@ -1,0 +1,405 @@
+
+/* 基本設定 */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  margin: 0;
+  background: #d3d3d3;
+  color: #111;
+  font-family: "Noto Sans JP", "Yu Gothic", sans-serif;
+  line-height: 1.7;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin-top: 0;
+}
+
+section {
+  scroll-margin-top: 80px;
+}
+
+/* ヘッダー */
+.site-header {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 5%;
+  background: #fff;
+}
+
+.site-logo {
+  font-size: 14px;
+  letter-spacing: 0.15em;
+}
+
+.site-nav {
+  display: flex;
+  gap: 28px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+.site-nav a:hover,
+.site-footer a:hover {
+  opacity: 0.55;
+}
+
+/* ハンバーガーメニュー */
+.menu-button {
+  display: none;
+  width: 32px;
+  height: 32px;
+  padding: 7px 4px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.menu-button span {
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin: 5px 0;
+  background: #111;
+}
+
+/* 共通の見出し */
+.eyebrow {
+  margin-bottom: 12px;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+}
+
+/* プロフィール */
+.hero {
+  display: grid;
+  text-align: center;
+  grid-template-columns: 1fr 1fr;
+  gap: 6%;
+  align-items: center;
+  padding: 80px 8%;
+  background: #fff;
+  border-top: 2px solid #d3d3d3;
+}
+
+.hero-profile {
+  max-width: 440px;
+}
+
+.profile-image {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 30px;
+  border-radius: 50%;
+  background: #d3d3d3;
+  overflow: hidden;
+}
+
+.hero h1 {
+  margin-bottom: 20px;
+  font-size: clamp(24px, 3vw, 40px);
+  font-weight: 500;
+}
+
+.intro-text {
+  max-width: 420px;
+  font-size: 13px;
+  line-height: 2;
+}
+
+.hero-map {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  background: #f6f6f6;
+}
+
+.hero-map img {
+  width: 75%;
+  height: auto;
+  object-fit: contain;
+}
+
+.hero-map p {
+  margin: 12px 0 0;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+}
+
+/* 作品一覧 */
+.works-section {
+  padding: 80px 5%;
+}
+
+.section-heading {
+  margin-bottom: 32px;
+}
+
+.section-heading h2,
+.attributes-section h2 {
+  margin-bottom: 0;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+/* PCでは3列、ページ全体を縦スクロール */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 50px;
+  align-items: start;
+}
+
+/* 各作品 */
+.work-card {
+  min-width: 0;
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+  scroll-margin-top: 24px;
+}
+
+.work-main {
+  padding: 16px;
+  border-bottom: 2px solid #d3d3d3;
+}
+
+.work-main h3 {
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.work-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+}
+
+.work-image {
+  aspect-ratio: 1.1 / 1;
+  overflow: hidden;
+  background: #d3d3d3;
+}
+
+.work-intro p {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+/* 作品解説 */
+.work-description {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 30%;
+  gap: 12px;
+  align-items: start;
+  padding: 16px;
+}
+
+.work-description h4 {
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.work-description p {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.portrait-image {
+  aspect-ratio: 0.75 / 1;
+  overflow: hidden;
+  background: #d3d3d3;
+}
+
+/* アトリビュート */
+.attributes-section {
+  min-height: 300px;
+  padding: 80px 8%;
+  background: #fff;
+  border-top: 2px solid #d3d3d3;
+}
+
+.attributes-section > p:last-child {
+  margin-top: 24px;
+  font-size: 13px;
+}
+
+/* フッター */
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 28px 5%;
+  background: #fff;
+  border-top: 2px solid #d3d3d3;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/* タブレット */
+@media (max-width: 1000px) {
+  .hero {
+    padding: 60px 5%;
+  }
+
+  .works-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+  }
+
+  .works-section {
+    padding: 60px 4%;
+  }
+}
+
+/* スマートフォン */
+@media (max-width: 600px) {
+  html {
+    scroll-padding-top: 20px;
+  }
+
+  section {
+    scroll-margin-top: 20px;
+  }
+
+  .site-header {
+    padding: 14px 20px;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  .site-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 20px;
+    background: #fff;
+    border-top: 1px solid #eee;
+  }
+
+  .site-nav.is-open {
+    display: flex;
+  }
+
+  .site-nav a {
+    padding: 14px 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 44px 24px;
+  }
+
+  .profile-image {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 24px;
+  }
+
+  .hero-map {
+    min-height: 220px;
+  }
+
+  .works-section {
+    padding: 48px 16px;
+  }
+
+  .section-heading {
+    margin-bottom: 24px;
+  }
+
+  .works-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .work-main {
+    padding: 16px;
+  }
+
+  .work-main h3 {
+    font-size: 15px;
+  }
+
+  .work-intro {
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .work-intro p,
+  .work-description p {
+    font-size: 12px;
+  }
+
+  .work-description {
+    grid-template-columns: minmax(0, 1fr) 28%;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .work-description h4 {
+    font-size: 13px;
+  }
+
+  .attributes-section {
+    min-height: 240px;
+    padding: 56px 24px;
+  }
+
+  .site-footer {
+    padding: 24px 20px;
+  }
+}
+
+/* 動きを減らす設定を尊重 */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
